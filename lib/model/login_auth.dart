@@ -19,6 +19,7 @@ class LoginAuth {
         final Map<String, dynamic> responseData = json.decode(response.body);
         String token = json.decode(response.body)['token'];
         print('login sucessful');
+        print('token = $token');
         return true;
       } else {
         print('Error: ${response.statusCode} - ${response.body}');

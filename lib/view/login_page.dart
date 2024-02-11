@@ -109,7 +109,7 @@ class LoginPage extends StatelessWidget {
                   bool sucess = await loginController.loginPressed(
                       emailController.text, passwordController.text);
                   if (sucess) {
-                    Get.to(HomePage());
+                    Get.to(() => HomePage());
                   } else {
                     Get.snackbar(
                       'Error',

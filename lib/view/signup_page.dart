@@ -162,6 +162,8 @@ class SignUp extends StatelessWidget {
                         addressController.text);
                     if (response) {
                       Get.to(HomePage());
+                    } else {
+                      Get.snackbar('error', 'something went wrong');
                     }
                   },
                   style: ElevatedButton.styleFrom(
