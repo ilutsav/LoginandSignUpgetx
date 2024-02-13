@@ -6,7 +6,6 @@ import 'home_page.dart';
 import 'signup_page.dart';
 
 class LoginPage extends StatelessWidget {
-  // const LoginPage({super.key});
   final primaryColor = const Color(0xFF8B4CFC);
   bool rememberMe = false;
   final loginController = Get.put(LoginController());

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_signup_getxwith_postapi/view/login_page.dart';
-
 import 'controller/shared_prefrences.dart';
 import 'view/home_page.dart';
 

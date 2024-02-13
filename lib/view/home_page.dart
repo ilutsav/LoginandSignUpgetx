@@ -12,17 +12,28 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  print('pressed');
-                  prefrences.clearAuthToken();
-                  Get.to(() => LoginPage());
-                },
-                child: Text('log out'))
-          ],
+            child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Hello User,',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        print('pressed');
+                        prefrences.clearAuthToken();
+                        Get.to(() => LoginPage());
+                      },
+                      child: Text('log out')),
+                ],
+              )
+            ],
+          ),
         )),
       ),
     );

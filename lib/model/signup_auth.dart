@@ -1,8 +1,11 @@
 import 'dart:convert';
 
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:login_signup_getxwith_postapi/controller/shared_prefrences.dart';
 
 class SignupAuth {
+  final preferences = Get.put(PrefrencesManager());
   Future<bool> signUp(String name, String email, String number, String gender,
       String password, String dob, String occupation, String address) async {
     final Map<String, dynamic> requestbody = {
@@ -26,6 +29,7 @@ class SignupAuth {
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseData = json.decode(response.body);
         String token = json.decode(response.body)['token'];
+        preferences.saveToken(token);
         print('signup sucessful');
         return true;
       } else {
