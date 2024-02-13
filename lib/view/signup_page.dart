@@ -161,7 +161,7 @@ class SignUp extends StatelessWidget {
                         occupationController.text,
                         addressController.text);
                     if (response) {
-                      Get.to(HomePage());
+                      Get.to(() => HomePage());
                     } else {
                       Get.snackbar('error', 'something went wrong');
                     }
@@ -182,7 +182,7 @@ class SignUp extends StatelessWidget {
                     const Text('Already have an account?'),
                     TextButton(
                       onPressed: () {
-                        Get.to(LoginPage());
+                        Get.to(() => LoginPage());
                       },
                       child: const Text(
                         'Sign In',

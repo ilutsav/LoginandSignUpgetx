@@ -133,7 +133,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () {
-                      Get.to(SignUp());
+                      Get.to(() => SignUp());
                     },
                     child: const Text(
                       'Create new account',
