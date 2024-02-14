@@ -8,6 +8,17 @@ class PrefrencesManager extends GetxController {
     prefs.setString('authToken', token ?? '');
   }
 
+  Future<void> saveuserId(int? id) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt('userId', id ?? 0);
+  }
+
+  Future<int?> getuserId() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? userId = prefs.getInt('userId') ?? 0;
+    return userId;
+  }
+
   Future<String?> getAuthToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     authToken.value = prefs.getString('authToken') ?? '';

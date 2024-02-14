@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../model/login_auth.dart';
+import '../services/login_auth.dart';
 
 class LoginController extends GetxController {
   final loginAuth = LoginAuth();

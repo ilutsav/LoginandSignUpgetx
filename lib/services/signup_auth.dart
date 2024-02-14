@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:login_signup_getxwith_postapi/controller/shared_prefrences.dart';

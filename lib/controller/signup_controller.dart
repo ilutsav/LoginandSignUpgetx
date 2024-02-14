@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../model/signup_auth.dart';
+import '../services/signup_auth.dart';
 
 class SignUpController extends GetxController {
   final signupAuth = SignupAuth();
