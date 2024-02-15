@@ -12,8 +12,9 @@ class HomeController extends GetxController {
   void onInit() async {
     super.onInit();
     int? userId = await preferences.getuserId();
-    print(userId);
+    print('user id in home controller outside if $userId');
     if (userId != null) {
+      print('user id infsode if in home contoller $userId');
       userController.getUserDetails(userId);
     } else {
       // Handle the case where userId is null

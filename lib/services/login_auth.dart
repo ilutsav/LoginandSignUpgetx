@@ -2,10 +2,12 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:login_signup_getxwith_postapi/controller/shared_prefrences.dart';
+import 'package:login_signup_getxwith_postapi/controller/user_controller.dart';
 import 'package:login_signup_getxwith_postapi/models/user_details.dart';
 
-class LoginAuth {
+class LoginAuth extends GetxController {
   final prefrencesController = Get.put(PrefrencesManager());
+  final userController = Get.put(UserController());
   String? token;
   int? userId;
   Future<bool> loginAuth(String email, String password) async {
@@ -24,9 +26,10 @@ class LoginAuth {
         final Map<String, dynamic> responseData = json.decode(response.body);
         token = json.decode(response.body)['token'];
         userId = json.decode(response.body)['userId'];
-        print(userId);
+        print('user id in login auth $userId');
         prefrencesController.saveuserId(userId);
         prefrencesController.saveToken(token);
+        userController.getUserDetails(userId!);
         return true;
       } else {
         //print('Error: ${response.statusCode} - ${response.body}');

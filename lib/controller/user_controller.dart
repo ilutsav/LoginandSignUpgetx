@@ -25,7 +25,7 @@ class UserController extends GetxController {
         Uri.parse(
             'https://backend-gilt-two.vercel.app/api/v1/getMentees/$userId'),
       );
-
+      print('user id in user controller $userId');
       if (response.statusCode == 200) {
         final Map<String, dynamic> userMap = json.decode(response.body);
         UserData user = userDataFromJson(json.encode(userMap));

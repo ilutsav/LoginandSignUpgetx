@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_signup_getxwith_postapi/controller/shared_prefrences.dart';
 import 'package:login_signup_getxwith_postapi/view/login_page.dart';
-
 import '../controller/home_controller.dart';
 import '../services/login_auth.dart';
 
@@ -46,6 +45,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   print('pressed');
                   prefrences.clearAuthToken();
+                  prefrences.clearuserId();
                   Get.to(() => LoginPage());
                 },
                 child: Text('log out')),
